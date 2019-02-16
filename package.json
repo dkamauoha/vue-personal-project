@@ -8,11 +8,24 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
+  "main": "server/index.js",
   "dependencies": {
-    "vue": "^2.5.3",
+    "@sendgrid/mail": "^6.3.1",
+    "aws-sdk": "^2.404.0",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap-vue": "^1.2.0",
-    "popper.js": "^1.12.9"
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "lodash": "^4.17.11",
+    "massive": "^5.7.5",
+    "moment": "^2.24.0",
+    "popper.js": "^1.12.9",
+    "vue": "^2.5.3",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.1.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -27,5 +40,10 @@
     "vue-template-compiler": "^2.5.3",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
+  },
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:4000"
+    }
   }
 }

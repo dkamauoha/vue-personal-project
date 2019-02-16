@@ -16,15 +16,27 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <router-view></router-view>
+    <b-btn variant='primary' @click='axiosTest'>TEST</b-btn>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'app',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    axiosTest: function () {
+      axios.get('/api/test')
+        .then(res => {
+          console.log(res)
+        })
     }
   }
 }
